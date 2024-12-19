@@ -14,6 +14,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/admin" element={<AdminHotelPage />} />
+            <Route path="/edit/:maphong" element={<EditForm />} />
           </Routes>
         </main>
         <Footer />
