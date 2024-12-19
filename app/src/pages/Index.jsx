@@ -1,17 +1,16 @@
-import '../index.css'; 
+import '../index.css'; // Adjust the path if necessary
 import RoomCard from '../components/RoomCard';
 import TestimonialCard from '../components/TestimonialCard';
 import { useEffect,useState } from 'react';
 import { testimonialData } from '../data/testimonialData';
 import Background from '../pic/background.jpg';
-import { roomData } from '../data/roomData.js';
-// import Form  from '../FormThue';
+import { fetchPhong } from '../data/api';
+import Form  from '../FormThue';
 export default function Index() {
   const [phongs, setPhong] = useState([]);
-  // useEffect(() => {
-  //   fetchPhong().then(setPhong);
-  // }, []);
-
+  useEffect(() => {
+    fetchPhong().then(setPhong);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +32,7 @@ export default function Index() {
               onClick={openModal}>
               Book Your Stay
             </button>
-            {/* <Form isOpen={isModalOpen} onClose={openModal}/> */}
+            <Form isOpen={isModalOpen} onClose={openModal}/>
           </div>
         </div>
       </section>
@@ -48,8 +47,8 @@ export default function Index() {
             your vacation with your family.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {roomData.map(room => (
-              <RoomCard key={room.id} {...room} />
+            {phongs.map(phong => (
+              <RoomCard key={phong.id} {...phong} />
             ))}
           </div>
         </div>
@@ -88,7 +87,7 @@ export default function Index() {
               onClick={openModal}>
               Book now
             </button>
-            {/* <Form isOpen={isModalOpen} onClose={openModal}/> */}
+            <Form isOpen={isModalOpen} onClose={openModal}/>
           </div>
         </div>
       </section> </div>
