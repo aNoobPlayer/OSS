@@ -66,4 +66,6 @@ export const createKhachhang = async (kh) => {
     console.error('Create error:', error.response?.data || error.message);
     throw new Error('Failed to create a booking. Please check your input.');
   }
+   
 };
+console.error('helo data.');
