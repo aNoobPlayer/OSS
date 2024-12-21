@@ -6,6 +6,7 @@ import { testimonialData } from '../data/testimonialData';
 import Background from '../pic/background.jpg';
 import { fetchPhong } from '../data/api';
 import Form  from '../FormThue';
+import '../output.css';
 export default function Index() {
   const [phongs, setPhong] = useState([]);
   useEffect(() => {
