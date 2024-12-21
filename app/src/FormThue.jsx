@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import './index.css';
-import './output.css';
 import { createKhachhang, fetchPhong } from "./data/api";
 
 export default function Form({ isOpen, onClose }) {
@@ -95,6 +94,20 @@ export default function Form({ isOpen, onClose }) {
             id="socccd"
             name="socccd"
             value={newPhieuthue.socccd}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-md mb-3"
+            required
+          />
+
+          {/* Phone Number */}
+          <label htmlFor="sdt" className="block text-sm font-medium mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="sdt"
+            name="sdt"
+            value={newPhieuthue.sdt}
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded-md mb-3"
             required
