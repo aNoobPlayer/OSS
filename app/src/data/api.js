@@ -20,6 +20,15 @@ export const createPhong = async (phong) => {
   }
 };
 
+export const editPhong = async (id, updatedPhong) => {
+  try {
+    await axios.put(`${API_URL}/phongs/${id}`, updatedPhong);
+  } catch (error) {
+    console.error('Edit error:', error.response?.data || error.message);
+    throw new error;
+  }
+};
+
 export const fetchKhachhang = async () => {
   try {
     const response = await axios.get(`${API_URL}/khachhang`);
