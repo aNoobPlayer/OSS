@@ -8,6 +8,7 @@ import Index from './pages/Index';
 import AdminHotelPage from './admin/adminForm';
 import EditForm from './admin/editForm'; 
 import './index.css'; // Adjust the path if necessary
+import './output.css'; // Adjust the path if necessary
 import { Route, Routes,BrowserRouter } from 'react-router-dom';
 export default function App() {
 
